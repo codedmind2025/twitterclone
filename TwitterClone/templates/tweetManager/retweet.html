@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<form action="" method="post" class="container">
+    {% csrf_token %}
+
+
+    <div>
+    <div class='container'>
+        <div class='col-10 col-md-10 mx-auto border rounded py-3 mb-4'>
+              <div class="form-group">
+
+    <textarea class='form-control' name='retweet-content' placeholder='Your views . . .'></textarea>
+
+
+    </div>
+            <div class='col-6 col-md-6 mx-auto border rounded py-3 mb-4'>
+                <small>{{ tweet.owner }}</small>
+                <div>
+                {{ tweet.content }}
+                </div>
+                {% if tweet.img %}
+                <img src='{{ tweet.img.url }}' height="80%" width="80%">
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

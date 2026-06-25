@@ -1,0 +1,46 @@
+#pics {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vmin;
+}
+#prof-pic
+{
+    position: absolute;
+    top: 24vmin;
+    left: 2vmin;
+    z-index: 1;
+}
+#output-prof-img {
+    width: 16vmin;
+    height: 16vmin;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#output-banner-img {
+    width: 100vmin;
+    height: 33.33vmin;
+    object-fit: cover;
+}
+
+.change-butt {
+    margin-top: 2vmin;
+    padding-left: 40vmin;
+}
+
+.container {
+    max-width: 100vmin;
+}
+.remov {
+    padding-left: 40vmin;
+}
+
+.btn-primary {
+    width: 25vmin;
+}
+
+.btn-danger-cstm {
+    width: 25vmin;
+}

@@ -1,0 +1,13 @@
+{% extends 'accounts/profile.html' %}
+{% load static %}
+
+{#{% block body %}#}
+
+    {% block custom_js %}
+            <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/prof_view.js' %}"></script>
+    <script>
+        const pk = {{ id }};
+        stack(false, pk, false, true)
+    </script>
+    {% endblock %}

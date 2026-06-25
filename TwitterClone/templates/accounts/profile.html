@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+{% endblock%}
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %}Profile{% endblock %}
+{% block body %}
+
+
+    <div id="pics">
+        <div id="header-img">
+            <img src="https://adhyatmik.in/wp-content/uploads/2019/02/Background-Header-1.jpg" id="output-banner-img">
+        </div>
+        <div id="prof-pic">
+            <img src="https://www.w3schools.com/w3images/avatar2.png" id="output-prof-img">
+        </div>
+    <div id="btn-here"></div>
+    </div>
+    <div class="container form form-inline" style="padding-top: 5%">
+        <div class="form-group mx-sm-3 mb-2 form form-inline" style="font-family: 'Slabo 27px', serif; font-weight: 700; font-size: 1.5rem" id="first_name">
+                First Name
+        </div>
+        <div class="form-group mx-sm-3 mb-2 form form-inline" style="font-family: 'Slabo 27px', serif; font-weight: 700; font-size: 1.5rem" id="last_name">
+            Last Name
+        </div>
+        <div class="form-group mx-sm-3 mb-2 form form-inline" style="font-family: 'Slabo 27px', serif; padding-left: 40%" id="followers-count">
+            followers
+        </div>
+        <div class="form-group mx-sm-3 mb-2 form form-inline" style="font-family: 'Slabo 27px', serif;" id="following-count">
+                following
+        </div>
+    </div>
+    <div class="Bio container" style="padding-top: 1%">
+        <label for="usr-bio">Bio</label>
+        <div name="bio" id="usr-bio" class="form-group form-control"></div>
+    </div>
+    <div id="tweets-here">Loading....</div>
+    <div class='container' style="width: 40vmin; display: none" id="search-results"></div>
+
+
+    {% block extended-body %}{% endblock %}
+
+    {% block custom_js %}
+    {% endblock %}
+
+
+{% endblock %}
+

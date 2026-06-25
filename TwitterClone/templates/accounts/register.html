@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Register</title>#}
+{#</head>#}
+{% block title %}Pweet | Register{% endblock %}
+
+{% block base-js %}
+        <script>
+            function checkPassword(form) {
+                password1 = form.password1.value;
+                password2 = form.password2.value;
+
+                // If password not entered
+                if (password1 === '')
+                    alert ("Please enter Password");
+
+                // If confirm password not entered
+                else if (password2 === '')
+                    alert ("Please enter confirm password");
+
+                // If Not same return False.
+                else if (password1 !== password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+            }
+        </script>
+{% endblock %}
+{#<body>#}
+
+{% block body %}
+    <form action="" method="post" onSubmit = "return checkPassword(this)" class="container">
+{#<form action="" method="post" onSubmit = "return checkPassword(this)">#}
+
+    {% csrf_token %}
+
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" name="email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label>username</label>
+    <input type="text" class="form-control" name="username">
+  </div>
+
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" class="form-control" name="first_name">
+  </div>
+
+  <div class="form-group">
+     <label>Last Name</label>
+    <input type="text" class="form-control" name="last_name">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password1" id="pswd1">
+  </div>
+
+  <div class="form-group">
+     <label>Password again</label>
+     <input type="password" class="form-control" name="password2" id="pswd2">
+  </div>
+
+  <div class="form-group">
+     <label>Bio</label>
+      <textarea class="form-control" name="bio" id="pswd2">Bio</textarea>
+  </div>
+{#        prof_img#}
+{#        #}
+{#          <div class="form-group">#}
+{#     <label>Bio</label>#}
+{#      <textarea class="form-control" name="bio" id="pswd2">Bio</textarea>#}
+{#  </div>#}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endblock %}
+{#</body>#}
+{#</html>#}

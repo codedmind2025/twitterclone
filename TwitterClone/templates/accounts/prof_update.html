@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block body %}
+    <div id="form-here">
+        <form id="my-frm" class="form">
+            <div id="pics">
+                <div id="header-img">
+                    <img src="https://adhyatmik.in/wp-content/uploads/2019/02/Background-Header-1.jpg" id="output-banner-img">
+                </div>
+                <div id="prof-pic">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png" id="output-prof-img">
+                </div>
+            </div>
+
+            <div class="change-butt container">
+                <input type="file" accept="image/*" name="prof_img" id="prof-img" onchange="load_av()" class="form-group" hidden>
+                <label for="prof-img" class=" btn btn-primary btn-sm">Change Avatar</label>
+                <input type="file" accept="image/*" name="banner_img" id="banner-img" class="form-group" onchange="load_banner()" hidden>
+                <label for="banner-img" class=" btn btn-primary btn-sm">Change Banner</label>
+            </div>
+            <div class="remov container">
+                <button type="button" class="btn btn-primary btn-sm" style="display: none;" id="remove-prof-img"  onclick="rem_av()">
+                    Remove avatar
+                </button>     
+                <button type="button" class="btn btn-primary btn-sm" style="display: none;" id="remove-banner-img" onclick="rem_ban()">
+                    Remove Banner
+                </button>
+            </div>
+
+{#            <div class="container" style="padding-bottom: 2%">#}
+{#                <input type="text">#}
+{#            </div>#}
+            <div class="container form form-inline" style="padding-top: 1%">
+                <div class="form-group mx-sm-3 mb-2 ">
+                    <label for="first_name" class="sr-only">First Name</label>
+                    <input type="text" class="form-control" id="first_name">
+                </div>
+                <div class="form-group mx-sm-3 mb-2 form form-inline ">
+                    <label for="last_name" class="sr-only">First Name</label>
+                    <input type="text" class="form-control" id="last_name">
+                </div>
+            </div>
+
+            <div class="Bio container">
+                <label for="usr-bio">Bio</label>
+                <textarea name="bio" id="usr-bio" class="form-group form-control"></textarea>
+                <button type="submit" class="btn btn-success" id="prof-update-btn">Save</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/update_profile.js' %}"></script>
+{% endblock %}

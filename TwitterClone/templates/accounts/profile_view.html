@@ -1,0 +1,21 @@
+{% extends 'accounts/profile.html' %}
+{% load static %}
+{% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+{% endblock%}
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %}Profile{% endblock %}
+{% block extended-body %}
+
+
+{#{% block custom_js %}#}
+{##}
+{#{% endblock %}#}
+        <script src="{% static 'js/prof_view.js' %}"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
+    <script>stack(false, null, false, true)</script>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Pweet | Login{% endblock %}
+{% block body %}
+<form action="" method="post" class="container">
+    {% csrf_token %}
+
+  <div class="form-group">
+   <label>username</label>
+    <input type="text" class="form-control" name="username">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="pswd" id="pswd1">
+  </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
